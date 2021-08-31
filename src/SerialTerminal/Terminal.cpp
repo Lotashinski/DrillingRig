@@ -1,17 +1,14 @@
 #include "Terminal.h"
-#include <cstdint>
-#include <cstdio>
-#include <list>
-#include <string>
 
 using namespace SerialTerminal;
 
-static const unsigned char CL = 0x0D;
-static const unsigned char DEL = 0x7F;
+static const unsigned char NUL = 0x00;
+static const unsigned char LF = 0x0A;
+static const unsigned char CR = 0x0D;
 
 void Terminal::write(uint8_t p) {
-  if (p == 0x00)
-    p = CL;
+  if (p == NUL || p == LF)
+    p = CR;
   _receivePartOfPackage(p);
 }
 
@@ -32,7 +29,7 @@ list<string> Terminal::getEvents() {
 }
 
 void Terminal::_receivePartOfPackage(uint8_t partOfPackage) {
-  if (partOfPackage != CL) // end-of-line check
+  if (partOfPackage != CR) // end of command
     _insertToBuffer(partOfPackage);
   else
     _callAndClearBuffer();

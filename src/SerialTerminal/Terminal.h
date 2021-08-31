@@ -4,8 +4,10 @@
 #include <cstdint>
 #include <functional>
 #include <map>
-#include <list>
 #include <string>
+#include <cstdint>
+#include <cstdio>
+#include <list>
 
 namespace SerialTerminal {
 

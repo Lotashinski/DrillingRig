@@ -1,6 +1,4 @@
 #include "TerminalController.h"
-#include <sstream>
-#include <string>
 
 #define STR(v) #v
 #define STRINGFY(v) STR(v)

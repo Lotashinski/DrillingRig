@@ -5,13 +5,6 @@
 #include "src/Measurement/Buffer.h"
 #include "src/SerialTerminal/Terminal.h"
 
-#include <bitset>
-#include <cstdint>
-#include <cstdio>
-#include <ios>
-#include <ostream>
-#include <sstream>
-#include <string>
 
 #define AS_LABDA(func) [](Terminal *term, string data) { func(term, data); }
 

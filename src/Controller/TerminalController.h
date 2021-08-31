@@ -5,6 +5,7 @@
 #include "src/Measurement/Buffer.h"
 #include "src/SerialTerminal/Terminal.h"
 #include <string>
+#include <sstream>
 
 namespace Controller {
 
